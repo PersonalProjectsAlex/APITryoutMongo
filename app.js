@@ -18,6 +18,8 @@ env(__dirname + '/.env');
 
 //Getting values from env
 var dev_db_url = process.env.DB_CONN;
+const host = process.env.HOST
+const port = process.env.PORT || 3000;
 
 // Set up mongoose connection
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
@@ -30,11 +32,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/students', routes);
 
-var port = 1234;
 
-app.listen(port, () => {
-    console.log('Server is up and running on port numner ' + port);
+app.listen(port, host, function() {
+  console.log("Server started.......");
 });
+// app.listen(port, () => {
+//     console.log('Server is up and running on port numner ' + port);
+// });
 
 // (async function() {
 //   try {

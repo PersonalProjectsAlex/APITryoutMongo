@@ -1,5 +1,4 @@
-
-
+// Global instances
 const bodyParser = require('body-parser');
 const express = require('express');
 
@@ -20,7 +19,8 @@ exports.createStudent = function (req, res, next) {
         {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
-            branch: req.body.branch
+            branch: req.body.branch,
+            comments: req.body.comments
         }
     );
 	let formData = req.body;
@@ -29,6 +29,7 @@ exports.createStudent = function (req, res, next) {
         if (err) {
             return next(err);
         }
-        res.send('Product Created successfully')
+        res.send(formData);
+        // res.send('Product Created successfully')
     })
 };

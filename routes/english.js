@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer');
 
-let upload = multer();
+let request = multer();
 
 //Calling .env
 var assert = require('assert');
@@ -22,7 +22,7 @@ var english_controller = require('../controllers/english');
 
 //Routes
 //router.post(createStudent, english_controller.createStudent);
-router.post('/createStudent',upload.fields([]), english_controller.createStudent);
+router.post('/createStudent',request.fields([]), english_controller.createStudent);
 
 //router.get('/:id', english_controller.product_details);
 
