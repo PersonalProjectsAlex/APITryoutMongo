@@ -36,6 +36,7 @@ app.use('/students', routes);
 app.listen(port, host, function() {
   console.log("Server started.......");
 });
+
 // app.listen(port, () => {
 //     console.log('Server is up and running on port numner ' + port);
 // });

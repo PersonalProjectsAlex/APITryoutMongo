@@ -23,8 +23,9 @@ var english_controller = require('../controllers/english');
 //Routes
 //router.post(createStudent, english_controller.createStudent);
 router.post('/createStudent',request.fields([]), english_controller.createStudent);
+router.post('/createWord',request.fields([]), english_controller.createWord);
 
-//router.get('/:id', english_controller.product_details);
+router.get('/words', english_controller.words);
 
 //router.put('/:id/update', english_controller.product_update);
 
